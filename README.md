@@ -6,7 +6,7 @@
 - clone this reposiroy
 
 ```js
-git clone https://bitbucket.org/ispg-projects/typescript-react-boilerplate.git
+git clone https://github.com/MHDFahz/Advanced-React-TS-Boilerplate.git
 ```
 
 - change the folder name from `typescript-react-boilerplate` to your `project name`
