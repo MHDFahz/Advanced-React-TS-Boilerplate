@@ -1,0 +1,133 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest/globals": true
+  },
+  "extends": [
+    "airbnb",
+    "prettier",
+    "plugin:prettier/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:jest/recommended",
+    "plugin:security/recommended",
+    "plugin:you-dont-need-lodash-underscore/compatible",
+    "eslint-config-prettier"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  // "parserOptions": {
+  //   "ecmaVersion": 2018
+  // },
+  "plugins": ["prettier", "jest", "security", "@typescript-eslint"],
+
+  "rules": {
+    "camelcase": "error",
+    "complexity": ["error", 30],
+    "no-console": "warn",
+    "no-unused-vars": "warn",
+    // lint errors not going with prettier rules
+    "prettier/prettier": [
+      "error",
+      {
+        // only contain Linux-style line endings(\n)
+        "endOfLine": "lf"
+      }
+    ],
+    // allow functions to be defined anywhere in the file
+    "no-use-before-define": "off",
+    // arrow functions require parens around arguments in all cases
+    "arrow-parens": ["error", "always"],
+    // Trailing commas simplify adding and removing items to objects and arrays
+    // when split in multiple lines (since only the lines you are modifying must
+    //  be touched.) Also it improves the clarity of diffs when an item is added
+    //  or removed from an object or array.
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "ignore"
+      }
+    ],
+    "no-underscore-dangle": "off",
+    "object-curly-newline": [
+      "error",
+      {
+        "consistent": true
+      }
+    ],
+    "global-require": "off",
+    "consistent-return": "off",
+    "no-return-assign": "off",
+    "class-methods-use-this": "warn",
+
+    // security
+    "detect-non-literal-fs-filename": "off",
+    "security/detect-object-injection": "off",
+    "security/detect-non-literal-fs-filename": "off",
+
+    // import/export
+    // Forbid the import of external modules that are not declared in
+    // the package.json's dependencies. For modules in devDependencies,
+    // only allow them in the below file patterns.
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/*.test.js",
+          "**/*.spec.js",
+          "**/*.dev.js",
+          "**/*.stories.js",
+          "src/setupTests.js",
+          "src/utils/test-utils.js"
+        ]
+      }
+    ],
+    // need a better solution
+    "import/no-unresolved": ["error", { "ignore": ["test-utils"] }],
+
+    // REACT SPECIFIC
+    // what's allowed in anchor links
+    // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md#rule-details
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        // which components acts on behalf <a ..>
+        "components": ["Link"],
+        // apart from "href" which attributes acts on its behalf
+        "specialLink": ["to"],
+        // validates if the anchor is being used as intended or else
+        // will signal to use a button instead
+        "aspects": ["noHref", "invalidHref", "preferButton"]
+      }
+    ],
+    "jsx-a11y/label-has-associated-control": "warn",
+    "jsx-a11y/click-events-have-key-events": "warn",
+    "jsx-a11y/control-has-associated-label": "warn",
+
+    // allow jsx syntax to live in js files
+    "react/jsx-filename-extension": [
+      "error",
+      { "extensions": [".js", ".tsx"] }
+    ],
+    "react/prefer-stateless-function": "off",
+    // "react/forbid-prop-types": "warn",
+    // "react/require-default-props": "warn",
+    // "react/no-unused-prop-types": "warn",
+    "react/jsx-props-no-spreading": "off",
+    "react/destructuring-assignment": "off",
+    // "react/no-array-index-key": "warn",
+    // "react/prop-types": "warn",
+    // "react/no-did-update-set-state": "warn",
+    "react/button-has-type": "warn",
+    "react/sort-comp": "off"
+  }
+}
