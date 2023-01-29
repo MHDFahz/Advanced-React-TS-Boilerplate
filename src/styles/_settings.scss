@@ -1,0 +1,46 @@
+// //
+// // overriding
+// // --------------------------------
+
+// @import 'react-redux-toastr/src/styles/index';
+@use "sass:math";
+
+$bootstrap-sass-asset-helper: false !default;
+$browser-context: 16; // Default
+// @function rem($pixels, $context: $browser-context) {
+//   @return #{$pixels/$context}rem;
+// }
+@function rem($pixels, $context: $browser-context) {
+  @return math.div($pixels, $context) + rem;
+}
+
+$container-max-widths: (
+  lg: 1230px,
+);
+
+$primary: #028283;
+$secondary: #003332;
+$gray-100: #fafafa;
+$gray-400: #989898;
+$gray-700: #565656;
+$gray-900: #1d1d1d;
+$border-color: #e8e8e8;
+$text-muted: $gray-400;
+$dark: #000;
+$white: #fff;
+$text-color: #1d1d1d;
+$text-grey: #666;
+$grey-bg: #fafafb;
+$grey-bg-secondary: #f5f6f8;
+$footer-text: #3f4141;
+$link-color: #028080;
+$link-hover-color: #028080;
+$font-weight-medium: 500;
+
+$font-family-sans-serif: "Helvetica Neue", Arial, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-size-base: 0.9375rem;
+$font-size-lg: 1.0625rem;
+$font-size-sm: 0.9375rem;
+
+$input-btn-padding-y: 0.8rem;

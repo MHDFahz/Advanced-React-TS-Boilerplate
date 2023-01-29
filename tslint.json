@@ -1,0 +1,16 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:latest", "tslint-config-prettier"],
+  "rules": {
+    "object-literal-sort-keys": false,
+    "member-access": false,
+    "ordered-imports": false,
+    "interface-name": [true, "never-prefix"],
+    "no-submodule-imports": false,
+    "curly": [true, "ignore-same-line"],
+    "no-implicit-dependencies": [true, "dev"]
+  },
+  "linterOptions": {
+    "exclude": ["node_modules/**"]
+  }
+}

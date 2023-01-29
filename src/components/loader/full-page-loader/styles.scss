@@ -1,0 +1,35 @@
+@import '../../../styles/settings';
+
+.Loader {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &__text {
+    color: $gray-900;
+    margin-top: rem(10);
+  }
+}
+
+.FullLoader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba($white, 0.8);
+  &__icon {
+    width: 90px;
+    height: 90px;
+    background: $white;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 70px;
+    }
+  }
+}
+

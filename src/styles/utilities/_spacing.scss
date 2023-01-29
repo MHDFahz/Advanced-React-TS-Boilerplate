@@ -1,0 +1,86 @@
+// stylelint-disable declaration-no-important
+
+// Margin and Padding
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    @each $prop, $abbrev in (margin: m, padding: p) {
+      @each $size, $length in $spacers {
+        .#{$abbrev}#{$infix}-#{$size} {
+          #{$prop}: $length !important;
+        }
+        .#{$abbrev}t#{$infix}-#{$size},
+        .#{$abbrev}y#{$infix}-#{$size} {
+          #{$prop}-top: $length !important;
+        }
+        html[dir='ltr'] {
+          .#{$abbrev}r#{$infix}-#{$size},
+          .#{$abbrev}x#{$infix}-#{$size} {
+            #{$prop}-right: $length !important;
+          }
+        }
+        html[dir='rtl'] {
+          .#{$abbrev}r#{$infix}-#{$size},
+          .#{$abbrev}x#{$infix}-#{$size} {
+            #{$prop}-left: $length !important;
+          }
+        }
+        .#{$abbrev}b#{$infix}-#{$size},
+        .#{$abbrev}y#{$infix}-#{$size} {
+          #{$prop}-bottom: $length !important;
+        }
+        html[dir='ltr'] {
+          .#{$abbrev}l#{$infix}-#{$size},
+          .#{$abbrev}x#{$infix}-#{$size} {
+            #{$prop}-left: $length !important;
+          }
+        }
+        html[dir='rtl'] {
+          .#{$abbrev}l#{$infix}-#{$size},
+          .#{$abbrev}x#{$infix}-#{$size} {
+            #{$prop}-right: $length !important;
+          }
+        }
+      }
+    }
+
+    // Some special margin utils
+    .m#{$infix}-auto {
+      margin: auto !important;
+    }
+    .mt#{$infix}-auto,
+    .my#{$infix}-auto {
+      margin-top: auto !important;
+    }
+    html[dir='ltr'] {
+      .mr#{$infix}-auto,
+      .mx#{$infix}-auto {
+        margin-right: auto !important;
+      }
+    }
+    html[dir='rtl'] {
+      .mr#{$infix}-auto,
+      .mx#{$infix}-auto {
+        margin-left: auto !important;
+      }
+    }
+    .mb#{$infix}-auto,
+    .my#{$infix}-auto {
+      margin-bottom: auto !important;
+    }
+    html[dir='ltr'] {
+      .ml#{$infix}-auto,
+      .mx#{$infix}-auto {
+        margin-left: auto !important;
+      }
+    }
+    html[dir='rtl'] {
+      .ml#{$infix}-auto,
+      .mx#{$infix}-auto {
+        margin-right: auto !important;
+      }
+    }
+  }
+}

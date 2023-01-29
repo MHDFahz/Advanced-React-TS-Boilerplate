@@ -1,0 +1,59 @@
+@import 'settings';
+
+.message {
+  position: relative;
+  padding: 12px 15px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 300;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  line-height: normal;
+
+  &__icon {
+    font-size: rem(26);
+
+    html[dir='ltr'] & {
+      margin-right: rem(20);
+    }
+
+    html[dir='rtl'] & {
+      margin-left: rem(20);
+    }
+  }
+
+  span {
+    font-weight: 700;
+  }
+  p {
+    margin-bottom: 0;
+  }
+
+  &--success {
+    color: #6ac258;
+    background-color: #eaf9e6;
+  }
+
+  &--error {
+    color: #ff4546;
+    background-color: #feebe5;
+  }
+
+  &__left {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__link {
+    color: $gray-400;
+    text-decoration: underline;
+    font-weight: 300;
+
+    &:hover {
+      color: $gray-400;
+      text-decoration: underline;
+    }
+  }
+}

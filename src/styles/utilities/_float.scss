@@ -1,0 +1,25 @@
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    html[dir='ltr'] {
+      .float#{$infix}-left {
+        float: left;
+      }
+      .float#{$infix}-right {
+        float: right;
+      }
+    }
+    html[dir='rtl'] {
+      .float#{$infix}-left {
+        float: right;
+      }
+      .float#{$infix}-right {
+        float: left;
+      }
+    }
+    .float#{$infix}-none {
+      float: none;
+    }
+  }
+}
