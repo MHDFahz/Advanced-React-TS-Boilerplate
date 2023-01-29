@@ -139,7 +139,7 @@ export async function upload<T>(
  *
  * @param {string} url - The URL to send the request to.
  * @param {Object} store - An object with a `token` property.
- * @param {string} accept - It is an optional string value that represents the Accept header to be sent in the request.
+ * @param {string} accept - The expected response format from the server. This will be sent as the 'Accept' header in the request.
  * @returns {Promise} A promise that resolves to the server's response.
  */
 export async function download(
@@ -166,7 +166,7 @@ export async function download(
  * @param {string} url - The URL to send the request to.
  * @param {Object} data - The data to send in the request body.
  * @param {Object} store - An object with a `token` property.
- * @param {string} accept - It is an optional string value that represents the Accept header to be sent in the request.
+ * @param {string} accept - The expected response format from the server. This will be sent as the 'Accept' header in the request.
  * @returns {Promise} A promise that resolves to the server's response.
  */
 export async function downloadPostData<T>(
