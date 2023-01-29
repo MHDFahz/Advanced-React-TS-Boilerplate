@@ -112,8 +112,8 @@ export async function remove<T>(url: string, store?: ApiServiceDataStore) {
  *
  * @param {string} url - The URL to send the request to.
  * @param {Object} data - The data to send in the request body.
- * @param {Object} store - An object with a `token` property.
  * @param {function} onUploadProgress - parameter is a callback function that takes in one argument, progressEvent, which is an object that represents the progress of the upload. The progressEvent object contains properties such as loaded and total, which can be used to determine the percentage of the file that has been uploaded.
+ * @param {Object} store - An object with a `token` property.
  * @returns {Promise} A promise that resolves to the server's response.
  */
 export async function upload<T>(
@@ -139,6 +139,7 @@ export async function upload<T>(
  *
  * @param {string} url - The URL to send the request to.
  * @param {Object} store - An object with a `token` property.
+ * @param {string} accept - It is an optional string value that represents the Accept header to be sent in the request.
  * @returns {Promise} A promise that resolves to the server's response.
  */
 export async function download(
@@ -163,7 +164,9 @@ export async function download(
  * The response is saved as a file using the 'file-saver' library.
  *
  * @param {string} url - The URL to send the request to.
+ * @param {Object} data - The data to send in the request body.
  * @param {Object} store - An object with a `token` property.
+ * @param {string} accept - It is an optional string value that represents the Accept header to be sent in the request.
  * @returns {Promise} A promise that resolves to the server's response.
  */
 export async function downloadPostData<T>(
