@@ -1,3 +1,12 @@
+/**
+ * This module provides a set of utility functions for string manipulation.
+ *
+ * @module http-services
+ * @author Muhammed Fahis <fahis.skazi@gmail.com>
+ * @version 1.2.0
+ * @since 2021-01-22
+ */
+
 import axios, { AxiosRequestConfig, AxiosRequestHeaders } from "axios";
 import { saveAs } from "file-saver";
 import ApiServiceDataStore from "./data";
