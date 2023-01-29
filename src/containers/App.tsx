@@ -1,12 +1,12 @@
-import React from 'react';
-import { withRouter } from 'react-router-dom';
-import ReduxToastr from 'react-redux-toastr';
+import React from "react";
+import ReduxToastr from "react-redux-toastr";
+import { withRouter } from "react-router-dom";
 
-import Routes from './routes/Routes';
+import Routes from "./routes/Routes";
 
-import '../styles/base.scss';
+import "../styles/base.scss";
 
-const App: React.SFC = () => {
+const App: React.FC = () => {
   return (
     <div>
       <ReduxToastr
