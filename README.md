@@ -1,4 +1,4 @@
-# typescript-react-boilerplate
+# Advanced-React-TS-Boilerplate
 
 ## How to use this boilerplate for another project
 
@@ -9,9 +9,9 @@
 git clone https://github.com/MHDFahz/Advanced-React-TS-Boilerplate.git
 ```
 
-- change the folder name from `typescript-react-boilerplate` to your `project name`
+- change the folder name from `Advanced-React-TS-Boilerplate` to your `project name`
 
-- change the name in `packages.json` from `typescript-react-boilerplate` to your `project name`
+- change the name in `packages.json` from `Advanced-React-TS-Boilerplate` to your `project name`
 
 - remove `.git` folder in the project folder
 
