@@ -22,11 +22,10 @@ import thunk from "redux-thunk";
 import { PersistConfig, persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
 
-import initialize from "./initializeStore";
-import rootReducer from "./rootReducer";
-/* eslint-disable-next-line import/no-extraneous-dependencies */
 import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
+import initialize from "./initializeStore";
 import { State } from "./interfaces";
+import rootReducer from "./rootReducer";
 
 const persistConfig: PersistConfig<State> = {
   key: "root",
